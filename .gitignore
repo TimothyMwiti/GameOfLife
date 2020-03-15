@@ -1,22 +1,24 @@
 ## User settings
-xcuserdata/
+GameOfLife/xcuserdata/
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
-*.xcscmblueprint
-*.xccheckout
+GameOfLife/*.xcscmblueprint
+GameOfLife/*.xccheckout
 
 ## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
-build/
-DerivedData/
-*.moved-aside
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
+GameOfLife/build/
+GameOfLife/DerivedData/
+GameOfLife/*.moved-aside
+GameOfLife/*.pbxuser
+GameOfLife/!default.pbxuser
+GameOfLife/*.mode1v3
+GameOfLife/!default.mode1v3
+GameOfLife/*.mode2v3
+GameOfLife/!default.mode2v3
+GameOfLife/*.perspectivev3
+GameOfLife/!default.perspectivev3
 
 ## Gcc Patch
-/*.gcno
+GameOfLife/*.gcno
+
+GameOfLife.xcodeproj
