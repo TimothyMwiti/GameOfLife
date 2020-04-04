@@ -50,15 +50,15 @@ public:
         if(! patternDrawingComplete){
             getUserPatternInput();
         }else{
-            Clear(olc::WHITE);
-            std::chrono::milliseconds timespan(200);
+            // Clear(olc::WHITE);
+            std::chrono::milliseconds timespan(20);
             std::this_thread::sleep_for(timespan);
             for (int x = 0; x < ScreenWidth(); x++){
                 for (int y = 0; y < ScreenHeight(); y++){
                     if(useCurToUpdate){
                         nextGen[x][y] = getCellState(x, y, curGen[x][y], true);
                     }else{
-                        curGen[x][y] = getCellState(x, y, nextGen[x][y], true);;
+                        curGen[x][y] = getCellState(x, y, nextGen[x][y], false);;
                     }
                 }
             }
@@ -92,6 +92,7 @@ public:
     }
     
     void drawPattern(bool gen[WIDTH][HEIGHT]){
+        Clear(olc::WHITE);
         for(int x = 0; x < WIDTH; x++){
             for(int y = 0; y < HEIGHT; y++){
                 if(gen[x][y]){
@@ -102,6 +103,7 @@ public:
     }
 
     bool getCellState(int w, int h, bool curState, bool useCur){
+        
         int aliveCount = 0;
         if(useCur){
             for(int i = w-1; i <= w+1; i++){
@@ -128,10 +130,16 @@ public:
         }
 
         if(curState){
-            return (aliveCount > 1 && aliveCount < 4) ? true : false;
+            if(aliveCount > 1 && aliveCount < 4){
+                return true;
+            }
+            return false;
         }
-
-        return (aliveCount == 3) ? true : false;
+        
+        if (aliveCount == 3) {
+            return true;
+        }
+        return false;
     }
 
 };
@@ -139,7 +147,7 @@ public:
 
 int main(int argc, char const *argv[]) {
     GameOfLife demo;
-    if (demo.Construct(WIDTH, HEIGHT, 10, 10))
+    if (demo.Construct(WIDTH, HEIGHT, 125, 125))
         demo.Start();
 
     return 0;
