@@ -6,4 +6,4 @@ which draws directly to the console.
 This concept was used as an example of how a system setup with simple rules can be simulated and produce very complex patterns as it progresses. Think Simulation Theory ;)
 
 Screen Capture:
-![Screen Capture of Game Implementation] ( https://github.com/TimothyMwiti/GameOfLife/master/capture.png "Game of Life")
+![alt text] ( <https://raw.githubusercontent.com/TimothyMwiti/GameOfLife/master/capture.png)>
